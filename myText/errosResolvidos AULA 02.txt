@@ -1,0 +1,31 @@
+Erro: message:Your API key is invalid status: INVALID_ARGUMENT
+
+Abaixo estão os problemas mais comuns que causam esse erro:
+
+1 - Vírgulas no .env.local 
+Quando colamos as credenciais do Firebase no .env.local, pode acontecer de você esquecer as vírgulas ao final de cada linha. Elas não funcionam dentro do env e inclusive quebram os valores das variáveis. Então caso o seu tenha, remove as vírgulas e reinicie a aplicação.
+
+2 - Variáveis inválidas
+Pode ser que as suas credenciais tenham expirado, então você precisa voltar ao Firebase, acessar o seu projeto criado e atualizar suas variáveis de ambiente. Ou mesmo remover e adicionar novamente o aplicativo para ter novas variáveis. Deixo aqui como exemplo as que utilizei, mas o ideal é usar as suas, pois como dito em aula posso trocar as minhas e você não conseguirá mais usar.
+# Firebase
+REACT_APP_API_KEY="AIzaSyCnKBx4W227HbuPdML5S6ZgbIay9Cyf0-A"
+REACT_APP_AUTH_DOMAIN="letmeask-nlw.firebaseapp.com"
+REACT_APP_DATABASE_URL="https://letmeask-nlw-default-rtdb.firebaseio.com"
+REACT_APP_PROJECT_ID="letmeask-nlw"
+REACT_APP_STORAGE_BUCKET="letmeask-nlw.appspot.com"
+REACT_APP_MESSAGING_SENDER_ID="718200634258"
+REACT_APP_APP_ID="1:718200634258:web:fa59e639d4cc058abf1f4b"
+Guilherme Capitão — Ontem às 22:36
+Erro: o botão copy para pegar o código da sala não fica com o tamanho completo do botão:
+
+Esse problema ocorre em qualquer navegador diferente do Firefox. Mas para solucionar é bem simples, só precisa adicionar um height: 100% dentro da estilização da div, dentro da classe .room-code no arquivo room-code.scss. No final, deve ficar assim:
+
+  div {
+    background: #835afd;
+    padding: 0 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; // <- Aqui
+  }
+

@@ -1,0 +1,89 @@
+Para quem tiver o erro C:/Users/USUARIO não é reconhecido como um comando interno, esse erro acontece porque no usuário do seu WIndows provavelmente tem um espaço ou algum caractere especial, como por exemplo:  Users/Nome Sobrenome.
+
+Uma forma bem fácil de evitar o problema é rodando npx create-react-app letmeask --template typescript que já vai funcionar normalmente.
+
+Outra forma é apenas criar o projeto em um lugar que não fica dentro da pasta do seu usuário, como por exemplo você pode criar uma pasta na C:/ para ficar C:/www  e criar seus projetos por lá :rocket:
+Joseph Oliveira — 20/06/2021
+Erro: There are multiple modules with names that only differ in casing
+
+Esse problema normalmente ocorre no windows, quando você está com o terminal apontando para o arquivo e alguma parte do caminho difere do original para o arquivo exatamente, inclusive entre letras maiúsculas e minúsculas. Para resolver isso é bem simples: 
+
+Basta reabrir o seu VSCode (caso tenha sido através do code .) novamente passando exatamente o caminho do arquivo, cuidando muito bem o nome de cada pasta para chegar até o projeto. Cada letra seja maiúscula ou minúscula precisa ser igual, o caminho todo até o projeto. :important: 
+Em outras situações/erros que não só a abertura do projeto no VSCode, a solução também é válida.
+
+Você pode também abrir pelo CMD diretamente, que aparentemente não ocorre o erro.
+Joseph Oliveira — 20/06/2021
+Erro: System limit for number of file watchers reached
+
+Caso você encontre esse erro, execute o seguinte comando no terminal: 
+
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+Após isso, basta reiniciar o VSCode que já deve funcionar :rocket:
+Joseph Oliveira — 20/06/2021
+Erro: listen EADDRINUSE :::3000
+
+Quando esse erro acontecer, é porque a porta já está em uso. Para resolver isso você pode executar os seguintes comandos conforme seu sistema operacional:
+// Para Linux
+pkill node
+
+// Para Windows (powershell em modo administrador)
+taskkill /f /im node.exe 
+Guilherme Capitão — 20/06/2021
+Erro: O arquivo script.ps1 não pode ser carregado porque a execução de scripts foi desabilitada neste sistema.
+
+Abra seu powershell em modo administrador e utilize o seguinte comando: Set-ExecutionPolicy RemoteSigned
+Em seguida responda A e pressione enter.
+Guilherme Capitão — 20/06/2021
+Erro: Internal Error: project@workspace:.: This package doesn't seem to be present in your lockfile;
+
+Provavelmente você possui a versão 2.x do Yarn. Para verificar isso, pode rodar um yarn --version.  Caso retorne 2.x..., vamos precisar voltar para a versão 1, e você pode fazer isso rodando o comando abaixo:
+
+yarn set version 1.22.10
+
+Agora já pode tentar executar novamente o que antes apresentou erro para você :purple_heart:
+Guilherme Capitão — 20/06/2021
+Erro: npm ERR! Could not install from "USER\AppData\Roaming\npm-cache_npx\15664" as it does not contain a package.json file.
+
+Esse problema acontece quando seu usuário do Windows tem algum espaço entre o nome e sobrenome por exemplo.
+
+Você pode tentar corrigir isso abrindo o terminal como administrador e alterando o caminho do cache do npm:
+
+npm config set cache "C:\Users\NOME~1\AppData\Roaming\npm-cache" --global
+
+Apenas altere "NOME" para o primeiro nome do seu usuário que deve funcionar :rocket:
+Guilherme Capitão — 20/06/2021
+Erro: O comando 'Set-Location' foi encontrado no módulo 'Microsfot.PowerShell.Management', mas não foi possível carregar o módulo...
+
+Existem algumas soluções temporárias para isso, mas o erro é causado por usar uma versão muito antiga do Powershell. É recomendado atualizar ele para a versão 7.0.3 pelo menos para resolver isso. Para fazer isso, pode baixar diretamente deste link, do repositório oficial do PowerShell no Github: https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/PowerShell-7.0.3-win-x64.msi
+Guilherme Capitão — Ontem às 18:30
+Erro: message:Your API key is invalid status: INVALID_ARGUMENT
+
+Abaixo estão os problemas mais comuns que causam esse erro:
+
+1 - Vírgulas no .env.local 
+Quando colamos as credenciais do Firebase no .env.local, pode acontecer de você esquecer as vírgulas ao final de cada linha. Elas não funcionam dentro do env e inclusive quebram os valores das variáveis. Então caso o seu tenha, remove as vírgulas e reinicie a aplicação.
+
+2 - Variáveis inválidas
+Pode ser que as suas credenciais tenham expirado, então você precisa voltar ao Firebase, acessar o seu projeto criado e atualizar suas variáveis de ambiente. Ou mesmo remover e adicionar novamente o aplicativo para ter novas variáveis. Deixo aqui como exemplo as que utilizei, mas o ideal é usar as suas, pois como dito em aula posso trocar as minhas e você não conseguirá mais usar.
+# Firebase
+REACT_APP_API_KEY="AIzaSyCnKBx4W227HbuPdML5S6ZgbIay9Cyf0-A"
+REACT_APP_AUTH_DOMAIN="letmeask-nlw.firebaseapp.com"
+REACT_APP_DATABASE_URL="https://letmeask-nlw-default-rtdb.firebaseio.com"
+REACT_APP_PROJECT_ID="letmeask-nlw"
+REACT_APP_STORAGE_BUCKET="letmeask-nlw.appspot.com"
+REACT_APP_MESSAGING_SENDER_ID="718200634258"
+REACT_APP_APP_ID="1:718200634258:web:fa59e639d4cc058abf1f4b"
+Guilherme Capitão — Ontem às 22:36
+Erro: o botão copy para pegar o código da sala não fica com o tamanho completo do botão:
+
+Esse problema ocorre em qualquer navegador diferente do Firefox. Mas para solucionar é bem simples, só precisa adicionar um height: 100% dentro da estilização da div, dentro da classe .room-code no arquivo room-code.scss. No final, deve ficar assim:
+
+  div {
+    background: #835afd;
+    padding: 0 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; // <- Aqui
+  }

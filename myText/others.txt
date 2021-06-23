@@ -1,0 +1,13 @@
+//webpack (snowpack, vite, ...) webpack responsavel pelo CreateReactApp
+// ele entende as importações percebe importações além de códigos javaScript
+// pega a extensão dos arquivos para ser entendido dentro do javascript
+// exemplo import illustration from '../assets/images/illustration.svg'
+
+
+
+
+CREATE REACT APP: RESPONSÁVEL POR QUAISQUER TIPO DE IMPORTAÇÃO: SEJA UM ARQUIVO CSS, IMG, SVG, ETC... TRÁS TAMBÉM A POSSIBILIDADE DE USAR SAAS QUE É UM PRE-PROCESSADOR CSS QUE PERMITE O CSS TER FUNCIONALIDADES A MAIS.
+
+PRA UTILIZAR O SASS INSTALE ATRAVÉS DO TERMINAL USANDO:
+ yarn add node-sass@^5.0.0
+ LEMBRANDO QUE A INSTALAÇÃO DEVE SER FEITA DE ACORDO COM O CREATEREACTAPP PERMITE. POR FIM ALTERE O ARQUIVO .css para .scss

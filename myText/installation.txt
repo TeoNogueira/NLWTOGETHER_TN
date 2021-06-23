@@ -3,3 +3,13 @@ INICIAR O REACT USE: yarn start
 yarn add firebase
 
 
+
+----- instalação do sass:
+
+yarn add node-sass@^5.0.0
+ LEMBRANDO QUE A INSTALAÇÃO DEVE SER FEITA DE ACORDO COM O CREATEREACTAPP PERMITE.
+ 
+POR FIM ALTERE O ARQUIVO .css para .scss
+
+ -------X--------------X---------------------
+

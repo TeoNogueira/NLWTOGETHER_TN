@@ -27,3 +27,5 @@ return (
 // utilizo o useState  desestruturando 
 // no exemplo acima o setCounter dentro da função increment adiciona + 1 tanto na console como na DOM
 // repare que a const tem o ESTADO ATUAL, e a função que é o setCounter que ALTERA! o VALOR DO ESTADO ATUAL!
+
+

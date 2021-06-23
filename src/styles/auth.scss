@@ -9,7 +9,7 @@ height: 100vh;
 aside {
     user-select: none;
     flex: 7;
-    background: #835afd;
+    background: #2b85a0;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -63,6 +63,13 @@ text-align: center;
 align-self: center; // regra somente na logo aplicar ao centro e não esticado pelo stretch.. sinal de > pega só a imagem que está dentro do  primeiro nível main-content
 }
 
+h2 {
+font-size: 24px;
+margin: 64px 0 24px;
+font-family: 'Poppins', sans-serif;
+
+}
+
 form {
 input {
 
@@ -83,7 +90,16 @@ button, input {
 
        }
    }
+.paragraph {
+    font-size: 14px;
+    color: #949494; 
+    margin-top: 16px;
+}
 
+a {
+
+    color: #5964f9;
+}
 }
 
 .create-room {
@@ -92,7 +108,7 @@ margin: 64px 0 0 0;
 height: 50px;
 border-radius: 8px;
 font-weight: 500;
-background: #ea4335;
+background: #ca2d2d;
 color: #fff;
 display: flex;
 justify-content: center;
@@ -140,9 +156,6 @@ transition: filter 0.2s;
 }
 
 }
-
-
-
 
 
 }

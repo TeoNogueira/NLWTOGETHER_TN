@@ -1,29 +1,24 @@
- import { useState} from 'react'
+import { ButtonHTMLAttributes} from 'react';
+import '../styles/button.scss';
 
-// export function Button() {
+ type buttonProps = ButtonHTMLAttributes<HTMLButtonElement>
+ 
+export function Button(props: buttonProps) {
 
-//   const [counter, setCounter] = useState(0)
 
-//     function increment() {
 
-//         setCounter(counter + 1)
-//         console.log(counter)
-//     }
+
+return (
     
-
-
-// return (
+    <button className="button" {...props}/>
+      
     
-//     <button onClick={increment}>{counter}</button>
-    
-// )
+)
 
+}
 
-// }
-
-
-// // para alterar um valor na DOM com o react, é necessário o use state
-// // no lugar de passar propriedades padrões do javascript manipulável da DOM
-// // utilizo o useState  desestruturando 
-// // no exemplo acima o setCounter dentro da função increment adiciona + 1 tanto na console como na DOM
-// // repare que a const tem o ESTADO ATUAL, e a função que é o setCounter que ALTERA! o VALOR DO ESTADO ATUAL!
+//uso do spread {...}
+//--------------x-------------------------x---------
+// importação de toda tipagem para botão do html>>>>> import { ButtonHTMLAttributes} from 'react'
+//ButtonHTMLAttributes<HTMLButtonElement>
+//--------------x-------------------------x---------

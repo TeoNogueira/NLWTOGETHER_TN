@@ -5,7 +5,6 @@ import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 import { Button } from '../components/Button'
 
-
 import '../styles/auth.scss'
 
 export function Home() {
@@ -16,7 +15,7 @@ function handleCreateRoom() {
     auth.signInWithPopup(provider).then(result => {
       console.log(result)
     })
-// history.push('rooms/new')
+history.push('rooms/new') 58:23 MIN STOPPED
 
 }
 

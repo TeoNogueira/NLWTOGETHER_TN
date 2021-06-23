@@ -31,3 +31,5 @@ NÃO COLOCANDO EXACT NA HOME AS OUTRAS PÁGINAS PODEM NÃO SER ACESSADAS DE ACOR
 SOBRE HOOKS:
 Toda função que começa com use ex: useHistory.. useEffect.. etc... precisa estar dentro do component nesse na função do component. caso contrário não funcionará o HOOK (use praticamente são HOOKS).
 ---x=-----------------------------------------x---------------------x-----------
+
+CONTEXTOS: São formas de compartilhar informações entre dois ou mais Componentes.

@@ -11,3 +11,23 @@ CREATE REACT APP: RESPONSÁVEL POR QUAISQUER TIPO DE IMPORTAÇÃO: SEJA UM ARQUI
 PRA UTILIZAR O SASS INSTALE ATRAVÉS DO TERMINAL USANDO:
  yarn add node-sass@^5.0.0
  LEMBRANDO QUE A INSTALAÇÃO DEVE SER FEITA DE ACORDO COM O CREATEREACTAPP PERMITE. POR FIM ALTERE O ARQUIVO .css para .scss
+ -x---------------------x---------------x---------------------
+
+
+ ROTEAMENTO REACT-ROUTER-DOM:
+
+ ENVOLVA TODA AS PAGES DENTRO DO APP NO:
+<BrowserRouter>
+<Router path="/" component={Home} />
+<Router path="/" component={NewRoom} />
+ </BrowserRouter>
+LEMBRANDO QUE SÃO OS COMPONENTS QUE ESTÃO SENDO IMPORTADOS PARA O APP NO CASO AS PAGES
+--x-----------------x---------------------
+
+<Route path="/" exact component={Home} /> <<< endereço exatamente com barra/
+se não o Route ler que o endereço começa no /
+NÃO COLOCANDO EXACT NA HOME AS OUTRAS PÁGINAS PODEM NÃO SER ACESSADAS DE ACORDO COM SEUS ENDEREÇOS.
+---------------------------x----------------------x-----------------------------
+SOBRE HOOKS:
+Toda função que começa com use ex: useHistory.. useEffect.. etc... precisa estar dentro do component nesse na função do component. caso contrário não funcionará o HOOK (use praticamente são HOOKS).
+---x=-----------------------------------------x---------------------x-----------

@@ -10,6 +10,15 @@ yarn add node-sass@^5.0.0
  LEMBRANDO QUE A INSTALAÇÃO DEVE SER FEITA DE ACORDO COM O CREATEREACTAPP PERMITE.
  
 POR FIM ALTERE O ARQUIVO .css para .scss
+-------X--------------X---------------------
 
- -------X--------------X---------------------
+ 
+----------------------x------------x-----------x------------
+react-router-dom
+CONCEITO DE ROTEAMENTO DO REACT PARA ADQUIRIR PÁGINAS RODANDO 
+yarn add react-router-dom
+
+import {Route} from 'react-router-dom' <<<<< PODE DÁ UM ERRO se estiver usando typescript, pois o pacote instalado não foi desenvolvido typescript para RESOLVER isso a comunidade criou pacote terceiros que inclui a definição dos tipos. INSTALE como dependencia de desenvolvimento:  yarn add @types/react-router-dom -D 
+
+----------------------x------------x-----------x------------
 

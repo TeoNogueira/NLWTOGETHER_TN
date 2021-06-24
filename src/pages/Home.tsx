@@ -15,7 +15,7 @@ function handleCreateRoom() {
     auth.signInWithPopup(provider).then(result => {
       console.log(result)
     })
-history.push('rooms/new') 58:23 MIN STOPPED
+history.push('rooms/new')
 
 }
 

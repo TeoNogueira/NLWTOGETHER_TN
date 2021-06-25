@@ -4,17 +4,22 @@ import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 import { Button } from '../components/Button'
-
+import { useContext } from 'react'
+import {AuthContext} from '../App'
 import '../styles/auth.scss'
+
 
 export function Home() {
 const history = useHistory();
+const {user, signWithGoogle} = useContext(AuthContext)
 
-function handleCreateRoom() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider).then(result => {
-      console.log(result)
-    })
+async function handleCreateRoom() {
+if(!user) {
+
+    await signWithGoogle()
+}
+
+
 history.push('rooms/new')
 
 }
@@ -29,6 +34,7 @@ return(
 </aside>
 
 <main>
+ {/* <h1>{value}</h1> */}
 <div className="main-content">
 <img src={logoImg} alt="LetmeasK"/>
 

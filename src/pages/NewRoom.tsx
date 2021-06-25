@@ -4,8 +4,12 @@ import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 import { Button } from '../components/Button'
+import {useContext} from 'react'
+import {AuthContext} from '../App'
+
 
 export function NewRoom() {
+const { user } = useContext(AuthContext)
 
 return(
 
@@ -17,6 +21,7 @@ return(
 </aside>
 
 <main>
+    <h1>{user?.name}</h1> 
 <div className="main-content">
 <img src={logoImg} alt="LetmeasK"/>
 <h2>Criar uma nova sala</h2>

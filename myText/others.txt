@@ -29,7 +29,7 @@ se não o Route ler que o endereço começa no /
 NÃO COLOCANDO EXACT NA HOME AS OUTRAS PÁGINAS PODEM NÃO SER ACESSADAS DE ACORDO COM SEUS ENDEREÇOS.
 ---------------------------x----------------------x-----------------------------
 SOBRE HOOKS:
-Toda função que começa com use ex: useHistory.. useEffect.. etc... precisa estar dentro do component nesse na função do component. caso contrário não funcionará o HOOK (use praticamente são HOOKS).
+Toda função que começa com "use" ex: useHistory.. useEffect.. etc... precisa estar dentro do component nesse na função do component. caso contrário não funcionará o HOOK ("use" praticamente são HOOKS).
 ---x-------------------------------------x---------------------x-----------
 
 CONTEXTOS: São formas de compartilhar informações entre dois ou mais Componentes.
@@ -41,7 +41,7 @@ AULA 02: A PARTIR DE 50MINUTOS mais ou menos ensina sobre createContext useConte
 
 x--x-------x------x-----------------x---------------x-------------x-----x---x
 
- - Para ignorar o typeScript use: as any EXEMPLO:
+ - Para ignorar o typeScript use: "as any" EXEMPLO:
 
 export const TestContext = createContext({} as any)
 
@@ -62,4 +62,24 @@ const [value, setValue ] = useState('Tester')
 
 Como o TestContext tem um value que referencia dois objetos, como alternativa devemos usar o as any para que o createContext consiga ler normalmente mesmo sendo mais de um objeto.
 
-  <h1>{user?.name}</h1> <<<<<<<< COM INTERROGAÇÃO SIGNFICA QUE EXISTE USUÁRIO OU UNDEFINED.
+  <h1>{user?.name}</h1> <<<<<<<< COM INTERROGAÇÃO SIGNIFICA QUE EXISTE USUÁRIO OU UNDEFINED. // STOPPED 1:18:10 AULA 02
+  ---------------------------------x--------------------x----------------------
+
+  USEEFFECT: o useEffect() dispara uma função sempre que algo acontecer!
+
+  Sintaxe: useEffect(() => {}, []) uma função e o segundo uma array, se passarmos sem array a função pode crashar! o Segundo parâmetro diz quando eu quero executar a função, no caso eu poderia estar monitorando EX:
+
+const [value, setValue ] = useState('Tester') 
+
+useEffect(() => {}, [value]) 
+
+Toda vez que o value mudar eu ponho no Array do useEffect(), mas se EU QUISERA disparar a função uma ÚNICA VEZ, eu deixo o ARRAY VAZIO: useEffect(() => {}, [])
+
+
+-----x---x---------- 
+ - No USEEFFECT SEMPRE o segundo parâmetro será um array!
+
+
+  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+

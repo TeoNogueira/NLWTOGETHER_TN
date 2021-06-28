@@ -8,7 +8,6 @@ import { useContext } from 'react'
 import {AuthContext} from '../App'
 import '../styles/auth.scss'
 
-
 export function Home() {
 const history = useHistory();
 const {user, signWithGoogle} = useContext(AuthContext)
@@ -34,7 +33,7 @@ return(
 </aside>
 
 <main>
- {/* <h1>{value}</h1> */}
+ <h1>{user?.name}</h1>
 <div className="main-content">
 <img src={logoImg} alt="LetmeasK"/>
 
@@ -63,4 +62,4 @@ placeholder="Digite o código da sala"
 
 )
 
-}
+}   

@@ -83,3 +83,11 @@ Toda vez que o value mudar eu ponho no Array do useEffect(), mas se EU QUISERA d
   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
+ReactNode: todas as vezes que eu quiser passar uma propriedade(React Ex: Components) para children, eu uso o ReactNode na Tipagem.
+-X----------------X---------------------X-------------X-----------------
+
+
+
+
+
+

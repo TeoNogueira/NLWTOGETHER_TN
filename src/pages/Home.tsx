@@ -33,7 +33,7 @@ return(
 </aside>
 
 <main>
- <h1>{user?.name}</h1>
+ {/* <h1>{user?.name}</h1> NOME NA AUTENTICAÇÃO DO USUÁRIO DO GOOGLE*/}
 <div className="main-content">
 <img src={logoImg} alt="LetmeasK"/>
 

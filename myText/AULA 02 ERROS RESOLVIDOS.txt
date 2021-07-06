@@ -1,71 +1,71 @@
-Para quem tiver o erro C:/Users/USUARIO não é reconhecido como um comando interno, esse erro acontece porque no usuário do seu WIndows provavelmente tem um espaço ou algum caractere especial, como por exemplo:  Users/Nome Sobrenome.
+Para quem tiver o erro C:/Users/USUARIO nï¿½o ï¿½ reconhecido como um comando interno, esse erro acontece porque no usuï¿½rio do seu WIndows provavelmente tem um espaï¿½o ou algum caractere especial, como por exemplo:  Users/Nome Sobrenome.
 
-Uma forma bem fácil de evitar o problema é rodando npx create-react-app letmeask --template typescript que já vai funcionar normalmente.
+Uma forma bem fï¿½cil de evitar o problema ï¿½ rodando npx create-react-app letmeask --template typescript que jï¿½ vai funcionar normalmente.
 
-Outra forma é apenas criar o projeto em um lugar que não fica dentro da pasta do seu usuário, como por exemplo você pode criar uma pasta na C:/ para ficar C:/www  e criar seus projetos por lá :rocket:
-Joseph Oliveira — 20/06/2021
+Outra forma ï¿½ apenas criar o projeto em um lugar que nï¿½o fica dentro da pasta do seu usuï¿½rio, como por exemplo vocï¿½ pode criar uma pasta na C:/ para ficar C:/www  e criar seus projetos por lï¿½ :rocket:
+Joseph Oliveira ï¿½ 20/06/2021
 Erro: There are multiple modules with names that only differ in casing
 
-Esse problema normalmente ocorre no windows, quando você está com o terminal apontando para o arquivo e alguma parte do caminho difere do original para o arquivo exatamente, inclusive entre letras maiúsculas e minúsculas. Para resolver isso é bem simples: 
+Esse problema normalmente ocorre no windows, quando vocï¿½ estï¿½ com o terminal apontando para o arquivo e alguma parte do caminho difere do original para o arquivo exatamente, inclusive entre letras maiï¿½sculas e minï¿½sculas. Para resolver isso ï¿½ bem simples: 
 
-Basta reabrir o seu VSCode (caso tenha sido através do code .) novamente passando exatamente o caminho do arquivo, cuidando muito bem o nome de cada pasta para chegar até o projeto. Cada letra seja maiúscula ou minúscula precisa ser igual, o caminho todo até o projeto. :important: 
-Em outras situações/erros que não só a abertura do projeto no VSCode, a solução também é válida.
+Basta reabrir o seu VSCode (caso tenha sido atravï¿½s do code .) novamente passando exatamente o caminho do arquivo, cuidando muito bem o nome de cada pasta para chegar atï¿½ o projeto. Cada letra seja maiï¿½scula ou minï¿½scula precisa ser igual, o caminho todo atï¿½ o projeto. :important: 
+Em outras situaï¿½ï¿½es/erros que nï¿½o sï¿½ a abertura do projeto no VSCode, a soluï¿½ï¿½o tambï¿½m ï¿½ vï¿½lida.
 
-Você pode também abrir pelo CMD diretamente, que aparentemente não ocorre o erro.
-Joseph Oliveira — 20/06/2021
+Vocï¿½ pode tambï¿½m abrir pelo CMD diretamente, que aparentemente nï¿½o ocorre o erro.
+Joseph Oliveira ï¿½ 20/06/2021
 Erro: System limit for number of file watchers reached
 
-Caso você encontre esse erro, execute o seguinte comando no terminal: 
+Caso vocï¿½ encontre esse erro, execute o seguinte comando no terminal: 
 
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
-Após isso, basta reiniciar o VSCode que já deve funcionar :rocket:
-Joseph Oliveira — 20/06/2021
+Apï¿½s isso, basta reiniciar o VSCode que jï¿½ deve funcionar :rocket:
+Joseph Oliveira ï¿½ 20/06/2021
 Erro: listen EADDRINUSE :::3000
 
-Quando esse erro acontecer, é porque a porta já está em uso. Para resolver isso você pode executar os seguintes comandos conforme seu sistema operacional:
+Quando esse erro acontecer, ï¿½ porque a porta jï¿½ estï¿½ em uso. Para resolver isso vocï¿½ pode executar os seguintes comandos conforme seu sistema operacional:
 // Para Linux
 pkill node
 
 // Para Windows (powershell em modo administrador)
 taskkill /f /im node.exe 
-Guilherme Capitão — 20/06/2021
-Erro: O arquivo script.ps1 não pode ser carregado porque a execução de scripts foi desabilitada neste sistema.
+Guilherme Capitï¿½o ï¿½ 20/06/2021
+Erro: O arquivo script.ps1 nï¿½o pode ser carregado porque a execuï¿½ï¿½o de scripts foi desabilitada neste sistema.
 
 Abra seu powershell em modo administrador e utilize o seguinte comando: Set-ExecutionPolicy RemoteSigned
 Em seguida responda A e pressione enter.
-Guilherme Capitão — 20/06/2021
+Guilherme Capitï¿½o ï¿½ 20/06/2021
 Erro: Internal Error: project@workspace:.: This package doesn't seem to be present in your lockfile;
 
-Provavelmente você possui a versão 2.x do Yarn. Para verificar isso, pode rodar um yarn --version.  Caso retorne 2.x..., vamos precisar voltar para a versão 1, e você pode fazer isso rodando o comando abaixo:
+Provavelmente vocï¿½ possui a versï¿½o 2.x do Yarn. Para verificar isso, pode rodar um yarn --version.  Caso retorne 2.x..., vamos precisar voltar para a versï¿½o 1, e vocï¿½ pode fazer isso rodando o comando abaixo:
 
 yarn set version 1.22.10
 
-Agora já pode tentar executar novamente o que antes apresentou erro para você :purple_heart:
-Guilherme Capitão — 20/06/2021
+Agora jï¿½ pode tentar executar novamente o que antes apresentou erro para vocï¿½ :purple_heart:
+Guilherme Capitï¿½o ï¿½ 20/06/2021
 Erro: npm ERR! Could not install from "USER\AppData\Roaming\npm-cache_npx\15664" as it does not contain a package.json file.
 
-Esse problema acontece quando seu usuário do Windows tem algum espaço entre o nome e sobrenome por exemplo.
+Esse problema acontece quando seu usuï¿½rio do Windows tem algum espaï¿½o entre o nome e sobrenome por exemplo.
 
-Você pode tentar corrigir isso abrindo o terminal como administrador e alterando o caminho do cache do npm:
+Vocï¿½ pode tentar corrigir isso abrindo o terminal como administrador e alterando o caminho do cache do npm:
 
 npm config set cache "C:\Users\NOME~1\AppData\Roaming\npm-cache" --global
 
-Apenas altere "NOME" para o primeiro nome do seu usuário que deve funcionar :rocket:
-Guilherme Capitão — 20/06/2021
-Erro: O comando 'Set-Location' foi encontrado no módulo 'Microsfot.PowerShell.Management', mas não foi possível carregar o módulo...
+Apenas altere "NOME" para o primeiro nome do seu usuï¿½rio que deve funcionar :rocket:
+Guilherme Capitï¿½o ï¿½ 20/06/2021
+Erro: O comando 'Set-Location' foi encontrado no mï¿½dulo 'Microsfot.PowerShell.Management', mas nï¿½o foi possï¿½vel carregar o mï¿½dulo...
 
-Existem algumas soluções temporárias para isso, mas o erro é causado por usar uma versão muito antiga do Powershell. É recomendado atualizar ele para a versão 7.0.3 pelo menos para resolver isso. Para fazer isso, pode baixar diretamente deste link, do repositório oficial do PowerShell no Github: https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/PowerShell-7.0.3-win-x64.msi
-Guilherme Capitão — Ontem às 18:30
+Existem algumas soluï¿½ï¿½es temporï¿½rias para isso, mas o erro ï¿½ causado por usar uma versï¿½o muito antiga do Powershell. ï¿½ recomendado atualizar ele para a versï¿½o 7.0.3 pelo menos para resolver isso. Para fazer isso, pode baixar diretamente deste link, do repositï¿½rio oficial do PowerShell no Github: https://github.com/PowerShell/PowerShell/releases/download/v7.0.3/PowerShell-7.0.3-win-x64.msi
+Guilherme Capitï¿½o ï¿½ Ontem ï¿½s 18:30
 Erro: message:Your API key is invalid status: INVALID_ARGUMENT
 
-Abaixo estão os problemas mais comuns que causam esse erro:
+Abaixo estï¿½o os problemas mais comuns que causam esse erro:
 
-1 - Vírgulas no .env.local 
-Quando colamos as credenciais do Firebase no .env.local, pode acontecer de você esquecer as vírgulas ao final de cada linha. Elas não funcionam dentro do env e inclusive quebram os valores das variáveis. Então caso o seu tenha, remove as vírgulas e reinicie a aplicação.
+1 - Vï¿½rgulas no .env.local 
+Quando colamos as credenciais do Firebase no .env.local, pode acontecer de vocï¿½ esquecer as vï¿½rgulas ao final de cada linha. Elas nï¿½o funcionam dentro do env e inclusive quebram os valores das variï¿½veis. Entï¿½o caso o seu tenha, remove as vï¿½rgulas e reinicie a aplicaï¿½ï¿½o.
 
-2 - Variáveis inválidas
-Pode ser que as suas credenciais tenham expirado, então você precisa voltar ao Firebase, acessar o seu projeto criado e atualizar suas variáveis de ambiente. Ou mesmo remover e adicionar novamente o aplicativo para ter novas variáveis. Deixo aqui como exemplo as que utilizei, mas o ideal é usar as suas, pois como dito em aula posso trocar as minhas e você não conseguirá mais usar.
+2 - Variï¿½veis invï¿½lidas
+Pode ser que as suas credenciais tenham expirado, entï¿½o vocï¿½ precisa voltar ao Firebase, acessar o seu projeto criado e atualizar suas variï¿½veis de ambiente. Ou mesmo remover e adicionar novamente o aplicativo para ter novas variï¿½veis. Deixo aqui como exemplo as que utilizei, mas o ideal ï¿½ usar as suas, pois como dito em aula posso trocar as minhas e vocï¿½ nï¿½o conseguirï¿½ mais usar.
 # Firebase
 REACT_APP_API_KEY="AIzaSyCnKBx4W227HbuPdML5S6ZgbIay9Cyf0-A"
 REACT_APP_AUTH_DOMAIN="letmeask-nlw.firebaseapp.com"
@@ -74,10 +74,10 @@ REACT_APP_PROJECT_ID="letmeask-nlw"
 REACT_APP_STORAGE_BUCKET="letmeask-nlw.appspot.com"
 REACT_APP_MESSAGING_SENDER_ID="718200634258"
 REACT_APP_APP_ID="1:718200634258:web:fa59e639d4cc058abf1f4b"
-Guilherme Capitão — Ontem às 22:36
-Erro: o botão copy para pegar o código da sala não fica com o tamanho completo do botão:
+Guilherme Capitï¿½o ï¿½ Ontem ï¿½s 22:36
+Erro: o botï¿½o copy para pegar o cï¿½digo da sala nï¿½o fica com o tamanho completo do botï¿½o:
 
-Esse problema ocorre em qualquer navegador diferente do Firefox. Mas para solucionar é bem simples, só precisa adicionar um height: 100% dentro da estilização da div, dentro da classe .room-code no arquivo room-code.scss. No final, deve ficar assim:
+Esse problema ocorre em qualquer navegador diferente do Firefox. Mas para solucionar ï¿½ bem simples, sï¿½ precisa adicionar um height: 100% dentro da estilizaï¿½ï¿½o da div, dentro da classe .room-code no arquivo room-code.scss. No final, deve ficar assim:
 
   div {
     background: #835afd;
@@ -85,5 +85,5 @@ Esse problema ocorre em qualquer navegador diferente do Firefox. Mas para soluci
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; // <- Aqui
+    height: 100%; // <- Aqui  
   }

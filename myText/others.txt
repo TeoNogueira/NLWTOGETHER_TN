@@ -88,6 +88,10 @@ ReactNode: todas as vezes que eu quiser passar uma propriedade(React Ex: Compone
 
 
 
+onChange={} <<<< toda vez que for alterado faça algo...
+
+
+
 
 
 

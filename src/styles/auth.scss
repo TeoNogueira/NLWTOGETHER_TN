@@ -1,11 +1,9 @@
 #page-auth {
+
 display: flex;
 align-items: stretch;
 height: 100vh;
     
-
-
-
 aside {
     user-select: none;
     flex: 7;
@@ -14,9 +12,9 @@ aside {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 120px 70px;    
+    padding: 120px 70px;
+    background: linear-gradient(255, 255, 255, 0);    
 }
-
 
 
 img {
@@ -84,6 +82,7 @@ button {
 margin-top: 16px;
 
 }
+
 button, input {
   width: 100%;
 
@@ -125,6 +124,7 @@ transition: filter 0.2s;
 
     filter: brightness(0.9);
  }
+
 }
 
 

@@ -4,8 +4,6 @@
 // exemplo import illustration from '../assets/images/illustration.svg'
 
 
-
-
 CREATE REACT APP: RESPONSÁVEL POR QUAISQUER TIPO DE IMPORTAÇÃO: SEJA UM ARQUIVO CSS, IMG, SVG, ETC... TRÁS TAMBÉM A POSSIBILIDADE DE USAR SAAS QUE É UM PRE-PROCESSADOR CSS QUE PERMITE O CSS TER FUNCIONALIDADES A MAIS.
 
 PRA UTILIZAR O SASS INSTALE ATRAVÉS DO TERMINAL USANDO:
@@ -89,6 +87,27 @@ ReactNode: todas as vezes que eu quiser passar uma propriedade(React Ex: Compone
 
 
 onChange={} <<<< toda vez que for alterado faça algo...
+
+--------------------x---------------------x-------------------x---------------
+
+para evitar LEITURA de DUAS ROTAS importe de dentro do react-router-dom o: {Switch} e ponha por volta do Route EX:
+return (
+    
+   <BrowserRouter>
+    <AuthContextProvider>
+    <Switch>
+   <Route path="/" exact component={Home} />
+   <Route path="/rooms/new" exact component={NewRoom} />
+   <Route path="/rooms/:id" component={Room} />
+   </Switch>
+   </AuthContextProvider>
+    </BrowserRouter>
+    
+  );
+  ---X----- ---X----- ---X----- ---X----- ---X----- ---X----- ---X-----
+
+
+  
 
 
 

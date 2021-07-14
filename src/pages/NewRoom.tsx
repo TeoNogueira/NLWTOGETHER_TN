@@ -1,18 +1,19 @@
-import {Link} from 'react-router-dom'
-import { FormEvent, useState } from 'react'
-import illustrationImg from '../assets/images/illustration.svg'
-import logoImg from '../assets/images/logo.svg'
+import {Link, useHistory} from 'react-router-dom';
+import { FormEvent, useState } from 'react';
+import illustrationImg from '../assets/images/illustration.svg';
+import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg'
-import { Button } from '../components/Button'
-import { useAuth } from '../hooks/useAuth'
-import { database } from '../services/firebase'
+import { Button } from '../components/Button';
+import { useAuth } from '../hooks/useAuth';
+import { database } from '../services/firebase';
 
 // import {useContext} from 'react'
 // import {AuthContext} from '../contexts/AuthContext'
 
 
 export function NewRoom() {
-
+// const { user } = useAuth()
+const history = useHistory()
 const [newRoom, setNewRoom] = useState('');
 
 async function handleCreateRoom(event: FormEvent) {
@@ -30,6 +31,8 @@ const firebaseRoom = await roomRef.push({
     authorId: user?.id,
 
 }) //jogando a informação pra dentro do 'rooms'
+
+history.push(`/rooms/${firebaseRoom.key}`)
 }
 
 const { user } = useAuth()

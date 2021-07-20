@@ -26,7 +26,7 @@ history.push('rooms/new')
 async function handleJoinRoom(event: FormEvent) {
 
 event.preventDefault();
-
+// 32:44
 if (roomCode === '') {
 
     return;

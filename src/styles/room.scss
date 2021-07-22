@@ -41,11 +41,17 @@ main {
 
         span {
             margin-left: 16px;
-            background: #e559f9;
+            background: #bc8f8f;
             border-radius: 9999px;
             padding: 8px 16px;
             color: #fff;
             font-size: 14px;
+            cursor: pointer;
+
+        }
+        span:hover {
+
+            opacity: 0.9;
         }
 
 
@@ -82,7 +88,7 @@ main {
 
             background: transparent;
             border: 0;
-            color: #835af0;
+            color: #2b85a0;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;

@@ -3,8 +3,7 @@ import '../styles/room-code.scss'
 //  { GenerateId } from './GenerateId'; testando números aleatórios
 /* <GenerateId /> */
 type RoomCodeProps = {
-    code: string;
-    
+    code: string;    
     }
 
 export function RoomCode(props: RoomCodeProps) {

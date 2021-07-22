@@ -3,7 +3,6 @@ import { Button } from '../components/Button'
 import { RoomCode } from '../components/RoomCode'
 import {useParams} from 'react-router-dom'
 
-
 import '../styles/room.scss'
 import { FormEvent, useState } from 'react'
 import { useAuth } from '../hooks/useAuth'
@@ -13,7 +12,6 @@ type RoomParams = {
 
     id: string;
 }
-
 
 export function Room() {
 const {user} = useAuth()
@@ -53,6 +51,9 @@ isAnswered: false,
 
 await database.ref(`rooms/${roomId}/questions`).push(question)
 
+
+setNewQuestion('');//Deixando o campo do formulário pós-enviado-ficar-limpo
+
 }
 return(
 
@@ -79,7 +80,6 @@ return(
     value={newQuestion}
     >
       
-
 
     </textarea>
     <div className="form-footer">

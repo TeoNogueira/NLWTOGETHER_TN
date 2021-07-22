@@ -1,0 +1,15 @@
+/*  function GenerateId() {
+
+
+// const generateId =  Math.round(Math.random() * 1000000000)
+
+// return(
+    
+// <div>{generateId}</div> 
+
+
+// )
+// }
+
+
+//TESTANDO NÚMEROS ALEATÓRIOS */

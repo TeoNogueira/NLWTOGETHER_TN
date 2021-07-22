@@ -1,0 +1,20 @@
+Toda propriedade do react use é um Hook.
+
+
+ const [count, setCount] = useState(0);
+
+
+Os nomes na esquerda não são parte da API do React. Você pode nomear suas próprias variáveis state:
+
+  const [fruit, setFruit] = useState('banana');
+
+
+Esta sintaxe do JavaScript é chamada de “atribuição via desestruturação”. Significa que estamos fazendo duas novas variáveis fruit e setFruit, onde fruit é definido para o primeiro valor retornado por useState, e setFruit é o segundo. É equivalente a este código:
+
+
+  var fruitStateVariable = useState('banana'); // Retorna um par
+  var fruit = fruitStateVariable[0]; // Primeiro item do par
+  var setFruit = fruitStateVariable[1]; // Segundo item do par
+
+
+Quando declaramos uma variável com useState, ela retorna um par — um array com dois itens. O primeiro item é o valor atual e o segundo é uma função que nos permite atualizá-la. Usar [0] e [1] para acessá-las é um pouco confuso porque elas tem um significado específico. É por isto que utilizamos atribuição via desestruturação no lugar.

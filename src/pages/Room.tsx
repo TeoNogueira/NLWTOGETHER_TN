@@ -8,6 +8,33 @@ import { FormEvent, useEffect, useState, } from 'react'
 import { useAuth } from '../hooks/useAuth'
 import { database } from '../services/firebase'
 
+type FirebaseQuestions = Record<string, {
+
+    author: {
+        name: string;
+        avatar: string;
+    }
+
+    content: string;
+    isAnswered: boolean;
+    isHighLighted: boolean;
+}>
+
+type Question = {
+
+    id: string;
+    author: {
+        name: string;
+        avatar: string;
+    }
+
+    content: string;
+    isAnswered: boolean;
+    isHighLighted: boolean;
+
+}
+
+
 type RoomParams = {
 
     id: string;
@@ -17,6 +44,8 @@ export function Room() {
 const {user} = useAuth()
 const params = useParams<RoomParams>();
 const [newQuestion, setNewQuestion] = useState('');
+const [questions, setQuestions] = useState<Question[]>([]); // Generic do typeScript
+const [title, setTitle] = useState('');
 
 const roomId = params.id;
 
@@ -24,8 +53,25 @@ useEffect(() => {
 console.log(roomId) 
 const roomRef = database.ref(`rooms/${roomId}`)
 
-roomRef.once('value', room => { 
+roomRef.on('value', room => { 
 
+    const databaseRoom = room.val();
+    const firebaseQuestions = databaseRoom.questions as FirebaseQuestions ?? {};
+
+    const parsedQuestions = Object.entries(firebaseQuestions).map(([key, value]) => {
+     return {
+
+        id: key,
+        content: value.content,
+        author: value.author,
+        isHighLighted: value.isHighLighted,
+        isAnswered: value.isAnswered,
+        
+     }
+  
+    }) // me retornar chave e valor num obj <<<< Object.entries()
+ setTitle(databaseRoom.title);
+setQuestions(parsedQuestions)
     // console.log(room.val());//*Ouvindo um Evento de dentro do Firebase uma única vez, caso varias seria: "roomRef.on()" */
 })
 
@@ -79,9 +125,9 @@ return(
  <main className="content">
 <div className="room-title">
 
-    <h1>Sala React</h1>
+    <h1>Sala {title}</h1>
 
-    <span>4 perguntas</span>
+{ questions.length > 0 &&  <span>{questions.length} pergunta(s)</span>}
 </div>
 
 <form onSubmit={handleSendQuestion}>
@@ -112,6 +158,7 @@ return(
     </div>
 </form>
 
+{JSON.stringify(questions)}
  </main>
 </div>
 

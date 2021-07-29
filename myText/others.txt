@@ -107,7 +107,16 @@ return (
   ---X----- ---X----- ---X----- ---X----- ---X----- ---X----- ---X-----
 
 
-  
+  Para declarar TIPAGEM EM OBJETO NO TYPESCRIPT USE : Record<string, Record<>>
+
+Record<string, Record<>> <<< objeto que a chave é uma string e na chave é outro objeto, pode ser também assim:
+
+Record<string, {
+
+}>
+
+
+---x-------------------------------x-----------------x-----------------x--------
 
 
 

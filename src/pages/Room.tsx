@@ -4,7 +4,7 @@ import { RoomCode } from '../components/RoomCode'
 import {useParams} from 'react-router-dom'
 
 import '../styles/room.scss'
-import { FormEvent, useState } from 'react'
+import { FormEvent, useEffect, useState, } from 'react'
 import { useAuth } from '../hooks/useAuth'
 import { database } from '../services/firebase'
 
@@ -20,6 +20,16 @@ const [newQuestion, setNewQuestion] = useState('');
 
 const roomId = params.id;
 
+useEffect(() => {
+console.log(roomId) 
+const roomRef = database.ref(`rooms/${roomId}`)
+
+roomRef.once('value', room => { 
+
+    // console.log(room.val());//*Ouvindo um Evento de dentro do Firebase uma única vez, caso varias seria: "roomRef.on()" */
+})
+
+}, [roomId]) /*Lembrando que o array vazio significa que executará o hook uma única vez */
 
 async function handleSendQuestion(event: FormEvent) {
 
@@ -80,11 +90,23 @@ return(
     value={newQuestion}
     >
       
-
     </textarea>
     <div className="form-footer">
+        {user ? (
 
+            <div className="user-info">
+             <img src={user.avatar} alt={user.name} />
+             <span>{user.name}</span>
+            </div>
+        ) : (
+          
         <span>Para enviar uma pergunta, <button>faça seu login.</button></span>
+
+        ) 
+        }
+
+        {/* ----x----x-- */}
+
         <Button type="submit" disabled={!user}>Enviar Pergunta</Button>
 
     </div>
